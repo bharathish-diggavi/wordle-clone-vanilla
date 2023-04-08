@@ -85,6 +85,7 @@ const resetGame = () => {
   cuttentIndex = 1;
   currentWord = "";
   givenWord = words[generateRandom()];
+  isGameOver = false;
   document.querySelectorAll(".cell").forEach((cell) => {
     cell.innerHTML = "";
     cell.classList = ["cell"];
