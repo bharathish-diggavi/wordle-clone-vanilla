@@ -54,6 +54,7 @@ document.addEventListener("keydown", function ({ key }) {
           isGameOver = true;
           colorCells(true);
           document.querySelector(".answer").innerHTML = "&#x1f602";
+          document.querySelector(".show-answer").innerHTML = "Reset";
         } else {
           //   console.log("not correct word");
           colorCells();
@@ -88,9 +89,10 @@ const resetGame = () => {
     cell.innerHTML = "";
     cell.classList = ["cell"];
   });
+  document.querySelector(".show-answer").innerHTML = "Show Answer";
 };
 
-const showAnswer = () => {
-  alert(`Given word is ${givenWord}`);
+const showAnswer = (e) => {
+  if (!isGameOver) alert(`Given word is ${givenWord}`);
   resetGame();
 };
